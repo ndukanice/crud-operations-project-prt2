@@ -12,6 +12,14 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'CRUD API is running',
+    docs: '/api/docs',
+    endpoints: ['/api/products', '/api/orders']
+  });
+});
+
 const productRoutes = require('./routes/products');
 app.use('/api/products', productRoutes);
 const orderRoutes = require('./routes/orders');
