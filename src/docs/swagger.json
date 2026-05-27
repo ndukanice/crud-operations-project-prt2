@@ -28,7 +28,7 @@
     },
     "/api/products/{id}": {
       "get": { "summary": "Get product by id", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"OK"}, "404": {"description":"Not found"}} },
-      "put": { "summary": "Update product", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"Updated"}, "400": {"description":"Validation error"}} },
+      "put": { "summary": "Update product", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Product" } } } }, "responses": {"200": {"description":"Updated"}, "400": {"description":"Validation error"}} },
       "delete": { "summary": "Delete product", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"Deleted"}} }
     },
     "/api/orders": {
@@ -44,7 +44,7 @@
     },
     "/api/orders/{id}": {
       "get": { "summary": "Get order by id", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"OK"}, "404": {"description":"Not found"}} },
-      "put": { "summary": "Update order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"Updated"}, "400": {"description":"Validation error"}} },
+      "put": { "summary": "Update order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Order" } } } }, "responses": {"200": {"description":"Updated"}, "400": {"description":"Validation error"}} },
       "delete": { "summary": "Delete order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": {"200": {"description":"Deleted"}} }
     }
   },
